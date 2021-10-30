@@ -80,7 +80,7 @@ export default function Cabinet() {
         <h4>
           Contribute sending ETH to{" "}
           <Link
-            href="https://etherscan.io/address/0x481b24ed5feacb37e282729b9815e27529cf9ae2#code"
+            href="https://etherscan.io/address/0xCFb99C3ac72677a61708892918dC104456fDA067#code"
             target="blank"
           >
             this contract

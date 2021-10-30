@@ -419,61 +419,63 @@ function App() {
 
                 {/* Burner zone */}
 
-                {isBurner && currentBurnRequest && (
-                  <>
-                    <br />
-                    <div className="container-fluid boots">
+                <>
+                  <br />
+                  <div className="container-fluid boots">
+                    <div
+                      className="row justify-content-md-center"
+                      style={{ textAlign: "center" }}
+                    >
                       <div
-                        className="row justify-content-md-center"
-                        style={{ textAlign: "center" }}
+                        className="col-12 col-md boots"
+                        style={{ marginBottom: "25px" }}
                       >
-                        <div
-                          className="col-12 col-md-6 boots"
-                          style={{ marginBottom: "25px" }}
-                        >
-                          <AmountToBurn data={balances.AmountOutMin} />
-                        </div>
-
-                        <div className="col-12 col-md-6 boots">
-                          <CurrentBurnRequest data={currentBurnRequest}>
-                            {balances.ETH !== "0.0" ? (
-                              <button
-                                type="button"
-                                className="nes-btn nes-pointer"
-                                onClick={() => requestBurnUBI()}
-                              >
-                                Make or Update a Burn Request
-                              </button>
-                            ) : (
-                              <>
-                                Come back when the contract has ETH to make a
-                                burn request.
-                              </>
-                            )}
-                          </CurrentBurnRequest>
-                        </div>
-
-                        {currentBurnRequest.amount !== "0.0" && (
-                          <center>
-                            <br />
-                            <button
-                              className="push--skeuo nes-pointer"
-                              onClick={() => burnUBI()}
-                            ></button>
-                            <p style={{ textAlign: "center" }}>
-                              If you're not the requester press the button to
-                              burn UBIs{" "}
-                              <span role="img" aria-label="emoji">
-                                🔥
-                              </span>
-                            </p>
-                            <br />
-                          </center>
-                        )}
+                        <AmountToBurn data={balances.AmountOutMin} />
                       </div>
+
+                      {isBurner && currentBurnRequest && (
+                        <>
+                          <div className="col-12 col-md-6 boots">
+                            <CurrentBurnRequest data={currentBurnRequest}>
+                              {balances.ETH !== "0.0" ? (
+                                <button
+                                  type="button"
+                                  className="nes-btn nes-pointer"
+                                  onClick={() => requestBurnUBI()}
+                                >
+                                  Make or Update a Burn Request
+                                </button>
+                              ) : (
+                                <>
+                                  Come back when the contract has ETH to make a
+                                  burn request.
+                                </>
+                              )}
+                            </CurrentBurnRequest>
+                          </div>
+
+                          {currentBurnRequest.amount !== "0.0" && (
+                            <center>
+                              <br />
+                              <button
+                                className="push--skeuo nes-pointer"
+                                onClick={() => burnUBI()}
+                              ></button>
+                              <p style={{ textAlign: "center" }}>
+                                If you're not the requester press the button to
+                                burn UBIs{" "}
+                                <span role="img" aria-label="emoji">
+                                  🔥
+                                </span>
+                              </p>
+                              <br />
+                            </center>
+                          )}
+                        </>
+                      )}
                     </div>
-                  </>
-                )}
+                  </div>
+                </>
 
                 <br />
                 {contributors && (
