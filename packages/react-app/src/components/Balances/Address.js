@@ -35,7 +35,7 @@ export default function Address(props) {
         <br />
         <Link
           href={
-            "https://etherscan.io/address/" +
+            "https://kovan.etherscan.io/address/" +
             addresses.contractUBIburner +
             "#code"
           }
